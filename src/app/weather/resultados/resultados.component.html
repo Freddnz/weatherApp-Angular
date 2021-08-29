@@ -1,1 +1,8 @@
-<p>resultados works!</p>
+<div *ngIf = "resultados" class="card card-body">
+    <p>Temperature: {{resultados.main.temp}} °C</p>
+    <p>Latitude: {{resultados.coord.lat}}</p>
+    <p>Longitude: {{resultados.coord.lon}}</p>
+    <p>Humidity: {{resultados.main.humidity}}</p>
+    <p>Pressure: {{resultados.main.pressure}}</p>
+    <p>Description: {{resultados.weather[0].description}}</p>
+  </div>
