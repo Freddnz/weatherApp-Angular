@@ -1,5 +1,5 @@
 export const weatherEnv = {
-    API_KEY : '7edcc22b2fd289c59162e9ed44a48613'
+    API_KEY : ''
 };
 
 export interface InputWeather {
