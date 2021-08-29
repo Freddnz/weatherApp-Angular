@@ -18,18 +18,12 @@ export class WeatherService {
 
   constructor( private http: HttpClient ) {
     this.apiKey = weatherEnv.API_KEY;
-    //this.servicioURL = `${this.servicioURL}/weather?&appid=${this.apiKey}&units=metric&q=`;
-
-    //this.inputCity = JSON.parse(localStorage.getItem('cityName')) || "";
-    //this.inputCoutryCode = JSON.parse(localStorage.getItem('countryCode')) || "";
     this.resultados = JSON.parse(localStorage.getItem('resultados')) || false;
 
    }
 
    GetWeather(cityName: string, countryCode: string): any{
 
-    //localStorage.setItem('cityName', JSON.stringify(this.inputCity));
-    //localStorage.setItem('countryCode', JSON.stringify(this.inputCoutryCode));
     const query = `${cityName},${countryCode}`;
 
     const params = new HttpParams()
@@ -41,7 +35,6 @@ export class WeatherService {
     this.http.get<ResponseWeather>(`${this.servicioURL}/weather`, {params})
      .subscribe((resp) =>{
        this.resultados = resp;
-       //console.log(this.resultados);
        localStorage.setItem('resultados', JSON.stringify(this.resultados));
      }, err => {
        console.log(err);
